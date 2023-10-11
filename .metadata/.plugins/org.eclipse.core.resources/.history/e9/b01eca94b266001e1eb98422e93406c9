@@ -1,0 +1,8 @@
+package genericPackage;
+
+public class WorkLib {
+	public void handleConfirmtionPopup()
+	{
+	    driver.switchTo().alert().accept();	
+	}
+}

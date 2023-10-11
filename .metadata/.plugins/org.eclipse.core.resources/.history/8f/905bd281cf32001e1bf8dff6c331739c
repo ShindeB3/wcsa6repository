@@ -1,0 +1,20 @@
+package methodsOfWebDriver;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class GetCurrentUrlMethod {
+	//It is use to get the url of current webpage
+	public static void main(String[] args) throws InterruptedException {
+		WebDriver driver=new ChromeDriver();
+		driver.manage().window().maximize();
+		//launch the Actitime
+		driver.get("http://onkar/login.do");
+		Thread.sleep(2000);
+		//Read the url of login page
+		String urlOfLoginPage=driver.getCurrentUrl();
+		System.out.println(urlOfLoginPage);
+		//To close the browser
+		driver.close();
+	}
+
+}

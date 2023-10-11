@@ -1,0 +1,5 @@
+package genericPakage;
+
+public interface IAutoConstant {
+
+}

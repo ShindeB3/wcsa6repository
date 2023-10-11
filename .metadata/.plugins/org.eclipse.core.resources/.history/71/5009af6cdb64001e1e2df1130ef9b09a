@@ -1,0 +1,9 @@
+package genericPakage;
+
+public class WrokLib extends BaseTest{
+	
+	public void handleConfirmtionPopup()
+	{
+	    driver.switchTo().alert().accept();	
+	}
+}

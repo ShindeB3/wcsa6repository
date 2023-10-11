@@ -1,0 +1,27 @@
+package keywordDrivenFrameWork;
+
+import java.io.IOException;
+
+import org.openqa.selenium.By;
+
+public class ValidLoginTestCase extends BaseTest {
+
+	public static void main(String[] args) throws IOException, InterruptedException {
+		// to open & close the Browser
+		BaseTest bt=new BaseTest(); 
+		bt.OpenBrowser();
+		
+		// identify username Text Box and pass username
+		driver.findElement(By.name("username")).sendKeys(bt.readPropertyData("./Data/config.properties","Username"));
+		
+		// identify password Text Box and pass password
+		driver.findElement(By.name("pwd")).sendKeys(bt.readPropertyData("./Data/config.properties","Password"));
+		
+		//identify loginButton and click
+		driver.findElement(By.id("loginButton")).click();
+		
+		Thread.sleep(2000);
+		bt.CloseBrowser();
+	}
+
+}

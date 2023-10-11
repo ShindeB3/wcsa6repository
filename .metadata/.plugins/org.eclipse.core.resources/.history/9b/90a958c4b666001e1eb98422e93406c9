@@ -1,0 +1,47 @@
+package genericPackage;
+
+import org.testng.ITestContext;
+import org.testng.ITestListener;
+import org.testng.ITestResult;
+import org.testng.Reporter;
+
+public class CustomeListener {
+	public void onTestStart(ITestResult result) {
+		
+	}
+
+	public void onTestSuccess(ITestResult result) {
+		
+	}
+
+	public void onTestFailure(ITestResult result) {
+		String methodName = result.getMethod().getMethodName();
+		Reporter.log(methodName+" method failed & taken ScreenShot");
+		failedMethod(methodName);
+	}
+
+	
+	public void onTestSkipped(ITestResult result) {
+	
+	}
+
+	public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
+	
+	}
+
+	@Override
+	public void onTestFailedWithTimeout(ITestResult result) {
+	
+	}
+
+	@Override
+	public void onStart(ITestContext context) {
+		
+	}
+
+	@Override
+	public void onFinish(ITestContext context) {
+	
+	}
+
+}

@@ -1,0 +1,22 @@
+package Assignment;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class FlipkartLaptopUsingFindElements {
+
+	public static void main(String[] args) throws InterruptedException {
+		//To launch web browser
+		WebDriver driver=new ChromeDriver();
+		driver.manage().window().maximize();
+				
+		//To launch web application
+		driver.get("https://www.flipkart.com/");
+		Thread.sleep(2000);
+
+		//To handle hidden devision pop up
+		driver.findElement(By.xpath("//button[text()='✕']")).click();
+	}
+
+}

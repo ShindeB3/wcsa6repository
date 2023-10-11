@@ -1,0 +1,31 @@
+package pomPackage;
+
+import java.io.IOException;
+
+public class ValidCutsomer_ProjectTestCase extends BaseTest{
+
+	public static void main(String[] args) throws IOException, InterruptedException {
+		// TO open and close browser
+		BaseTest bt=new BaseTest();
+		bt.OpenBrowser();
+		Thread.sleep(2000);
+		
+		LoginPage lp=new LoginPage(driver);
+		Flib flib=new Flib();
+		Thread.sleep(2000);
+		
+		lp.validLogin(flib.readPropertyData(PROP_PATH, "Username"),flib.readPropertyData(PROP_PATH,"Password"));
+		Thread.sleep(2000);
+		HomePage hp=new HomePage(driver);
+		hp.click_On_Tasks_Module();
+		Thread.sleep(2000);
+		TasksPage tp=new TasksPage(driver);
+		Thread.sleep(2000);
+		tp.Create_New_Customer_Method(flib.readExcelData(EXCEL_PATH,CUSTOMERS_PROJECTS_SHEETNAME, 1, 0));
+		Thread.sleep(2000);
+		tp.Create_New_Project_Method(flib.readExcelData(EXCEL_PATH, CUSTOMERS_PROJECTS_SHEETNAME, 1, 0),flib.readExcelData(EXCEL_PATH, CUSTOMERS_PROJECTS_SHEETNAME, 1, 1));
+		
+
+	}
+
+}

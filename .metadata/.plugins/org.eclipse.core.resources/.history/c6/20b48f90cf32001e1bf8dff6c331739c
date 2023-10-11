@@ -1,0 +1,35 @@
+package methodsOfWebDriver;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class FindElementMethod {
+
+	public static void main(String[] args) throws InterruptedException {
+		//To launch web browser
+		WebDriver driver=new ChromeDriver();
+		driver.manage().window().maximize();
+		Thread.sleep(2000);
+		
+		//To launch web application
+		driver.get("http://onkar/login.do");
+		
+		//identify username textbox and pass the inputs as admin
+		//to identify we use findelemnt method
+		//once the webelement fount it return webelement (Interface) & address of webelemnt
+		WebElement username=driver.findElement(By.name("username"));
+		System.out.println(username);
+		//To send the value or text in username textfield
+		username.sendKeys("admin");
+		Thread.sleep(2000);
+		
+		//To identify textbox we use findElement method
+		WebElement password=driver.findElement(By.name("pwd"));
+		System.out.println(password);
+		password.sendKeys("manager");
+		
+		driver.quit();
+	}
+}

@@ -1,0 +1,28 @@
+package x_path;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;    
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class XpathUsingUniqueAttribute {
+	//X-path using unique attribute
+	public static void main(String[] args) throws InterruptedException {
+		//To launch web browser
+		WebDriver driver=new ChromeDriver();
+		driver.manage().window().maximize();
+				
+		//To launch web application
+		driver.get("https://aiflyingreturns.b2clogin.com/aiflyingreturns.onmicrosoft.com/b2c_1a_signup_signin/oauth2/v2.0/authorize?client_id=ac5c8be3-c829-4db6-8eb7-aa4a37c61cbc&scope=ac5c8be3-c829-4db6-8eb7-aa4a37c61cbc%20openid%20profile%20offline_access&redirect_uri=https%3A%2F%2Floyalty.airindia.com%2Fin%2Fen%2Faccount-summary.html&client-request-id=e2c63f42-55b3-4763-8c3b-39f6386cf5d5&response_mode=fragment&response_type=code&x-client-SKU=msal.js.browser&x-client-VER=2.31.0&client_info=1&code_challenge=61rVFdJH2BJak1VlzjbRRaWfZSNt7d47gYKjWrWcHmE&code_challenge_method=S256&nonce=f239a956-88b0-40a4-826d-1b59f245037d&state=eyJpZCI6ImI5YTEwYmNjLWVhMDUtNGQ5YS1iM2VmLWNhODZhODk1MDI4ZiIsIm1ldGEiOnsiaW50ZXJhY3Rpb25UeXBlIjoicmVkaXJlY3QifX0%3D");
+		Thread.sleep(2000);
+
+		//Identify webelement by using x-path
+		driver.findElement(By.xpath("//input[@placeholder='Email Address']")).sendKeys("shindebhagyashree3@gmail.com");
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//input[@aria-label='Password']")).sendKeys("shree@123");
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//button[@type='submit']")).click();
+		Thread.sleep(1000);
+		driver.quit();			
+	}
+
+}

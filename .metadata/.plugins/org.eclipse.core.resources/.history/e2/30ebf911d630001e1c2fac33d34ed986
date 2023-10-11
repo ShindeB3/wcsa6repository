@@ -1,0 +1,28 @@
+package Assignment;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class NetflixByUsingIDNameLocator {
+
+	public static void main(String[] args) {
+		//To launch web browser
+		WebDriver driver=new ChromeDriver();
+		driver.manage().window().maximize();
+		
+		//To launch web application
+		driver.get("https://www.netflix.com/in/");
+		
+		//To click sign in button
+		driver.findElement(By.linkText("Sign In")).click();
+		
+		//To enter username and password 
+		driver.findElement(By.name("userLoginId")).sendKeys("shindebhagyshree3@gmail.com");
+		driver.findElement(By.id("id_password")).sendKeys("shree");
+		driver.findElement(By.className("btn login-button btn-submit btn-small")).click();
+		
+
+	}
+
+}

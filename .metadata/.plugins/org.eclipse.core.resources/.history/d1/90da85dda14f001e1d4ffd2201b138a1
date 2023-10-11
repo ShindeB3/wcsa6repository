@@ -1,0 +1,44 @@
+package seleniumScenario;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.interactions.Actions;
+
+public class Scenario3DragNDrop {
+
+	public static void main(String[] args) throws InterruptedException {
+		// launch mozilla firefox
+		FirefoxDriver driver = new FirefoxDriver();
+		//ChromeDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+		
+		driver.get("https://jqueryui.com/droppable/");
+		
+		Thread.sleep(2000);
+		Actions act = new Actions(driver);
+		
+		//switch to frame
+		WebElement dframe = driver.findElement(By.xpath("//iframe[@class='demo-frame']"));
+		driver.switchTo().frame(dframe);
+		
+		//identify source element drag me 
+		WebElement source = driver.findElement(By.id("draggable"));
+		
+		//identify dest element drop here
+		WebElement dest = driver.findElement(By.id("droppable"));
+		
+		//Thread.sleep(2000);
+		//drag source element and drop destination
+		act.clickAndHold(source).moveToElement(dest).release(dest).build().perform();
+		//act.dragAndDrop(source, dest).build().perform();
+		Thread.sleep(2000);
+		driver.quit();
+	}
+
+}

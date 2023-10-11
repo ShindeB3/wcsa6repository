@@ -1,0 +1,10 @@
+package seleniumScenario;
+
+public class Scenario3DragNDrop {
+
+	public static void main(String[] args) {
+		// launch mozilla firefox
+		Firefox driver = new FirefoxDriver();
+	}
+
+}

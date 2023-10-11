@@ -1,0 +1,9 @@
+package locators;
+
+public class ClassNameLocator {
+
+	public static void main(String[] args) {
+		
+	}
+
+}

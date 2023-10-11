@@ -1,0 +1,5 @@
+package keywordDrivenFrameWork;
+
+public interface IAutoConstant {
+
+}
